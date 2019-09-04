@@ -1,0 +1,454 @@
+@import "./utils/libs";
+@import "./utils/mixin";
+@import "./utils/vars";
+
+@include font-face("Manrope", "../fonts/manrope-extrabold", 800);
+@include font-face("Manrope", "../fonts/manrope-bold", 700);
+@include font-face("Manrope", "../fonts/manrope-medium", 500);
+@include font-face("Manrope", "../fonts/manrope-regular", 400);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  color: $mainFontColor;
+  display: flex;
+  flex-direction: column;
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  font-weight: $mainFontWeight;
+  line-height: $mainLineHeight;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+
+  // сглаживание шрифтов в MacOS
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: $primary;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+h1,
+.h1 {
+  @include font-size(36px, 48px, 375px, 1920px);
+}
+
+h2,
+.h2 {
+  @include font-size(32px, 40px, 375px, 1920px);
+  margin-bottom: rem(24px);
+  margin-top: rem(32px);
+}
+
+h3,
+.h3 {
+  @include font-size(24px, 32px, 375px, 1920px);
+  margin-bottom: rem(24px);
+  margin-top: rem(32px);
+}
+
+h4,
+.h4 {
+  @include font-size(18px, 24px, 375px, 1920px);
+  margin-bottom: rem(24px);
+  margin-top: rem(32px);
+}
+
+h5,
+.h5 {
+  @include font-size(18px, 20px, 375px, 1920px);
+  margin-bottom: rem(24px);
+  margin-top: rem(32px);
+}
+
+h6,
+.h6 {
+  @include font-size(16px, 18px, 375px, 1920px);
+  margin-bottom: rem(24px);
+  margin-top: rem(32px);
+}
+
+a {
+  border-bottom: 1px solid;
+  border-color: $green;
+  text-decoration: none;
+  transition: border-color .25s ease-in-out;
+
+  &:hover {
+    border-color: transparent;
+    text-decoration: none;
+    transition: border-color .25s ease-in-out;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: rem(16px 0);
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0 0 0 32px;
+    position: relative;
+
+    &::before {
+      background-color: #00B84C;
+      content: "";
+      height: 2px;
+      display: inline-block;
+      left: 0;
+      position: absolute;
+      top: 10px;
+      width: 16px;
+    }
+  }
+}
+
+b,
+strong {
+  font-family: "Manrope";
+  font-weight: 700;
+  font-style: normal;
+}
+
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+  position: relative;
+}
+
+.no-paddings {
+  padding: 0 !important;
+}
+
+.no-margins {
+  margin: 0 !important;
+}
+
+.button {
+  background: $greenGradient;
+  border: none !important;
+  border-radius: 2px;
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.08);
+  color: $default;
+  cursor: pointer;
+  display: inline-block;
+  opacity: 1;
+  padding: rem(24px 78px);
+  transition: opacity .25s ease-in-out;
+  width: auto;
+
+  &:hover {
+    color: $default;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    cursor: default;
+    opacity: .5;
+    transition: opacity .25s ease-in-out;
+  }
+}
+
+input:not([type="submit"]),
+textarea {
+  background-color: $default;
+  border: none;
+  border-bottom: 2px solid $primaryLight;
+  color: $primary;
+  display: block;
+  @include font-size(18px, 20px, 375px, 1920px);
+  margin-bottom: rem(24px);
+  padding: 0 0 rem(16px) 0;
+  transition: border-color .25s ease-in-out;
+  width: 100%;
+
+  &.invalid {
+    border-color: $danger;
+    transition: border-color .25s ease-in-out;
+  }
+
+  &.valid {
+    border-color: $success;
+    transition: border-color .25s ease-in-out;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: block;
+  height: 24px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 24px;
+  z-index: -1;
+
+  &+label {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &+label::before {
+    background-color: $primaryLighter;
+    border: 2px solid $borderBase;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    flex: none;
+    height: rem(24px);
+    margin-right: rem(8px);
+    width: rem(24px);
+  }
+
+  &+label::after {
+    background-color: transparent;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    flex: none;
+    height: rem(12px);
+    left: rem(6px);
+    position: absolute;
+    top: rem(6px);
+    width: rem(12px);
+  }
+
+  &:checked+label::after {
+    background-color: $green;
+  }
+}
+
+input[type="checkbox"] {
+  &+label::before {
+    border-radius: 0;
+  }
+
+  &+label::after {
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-radius: 0;
+    height: rem(24px);
+    left: 0px;
+    top: 0px;
+    transition: initial;
+    width: rem(24px);
+  }
+
+  &:checked+label::before {
+    background-color: $green;
+    border-color: $green;
+  }
+
+  &:checked+label::after {
+    background-image: url(../images/checked.svg);
+  }
+}
+
+@include placeholder {
+  color: $placehoder;
+  @include font-size(18px, 20px, 375px, 1920px);
+}
+
+.to-top {
+  background-image: url(../images/to-top.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  border-radius: 12px;
+  bottom: rem(45px);
+  display: none;
+  height: rem(48px);
+  outline: none !important;
+  position: fixed;
+  right: rem(45px);
+  width: rem(48px);
+  z-index: 10;
+}
+
+form.form-ajax {
+  .field {
+    // margin-bottom: rem(56px);
+    margin-bottom: rem(24px);
+
+    label {
+      color: $mainFontColor;
+      font-size: rem(12px);
+      margin: 0;
+      top: 25px;
+      position: relative;
+      transition: top .25s ease-in-out;
+
+      &.focus {
+        top: 0;
+        transition: top .25s ease-in-out;
+      }
+    }
+
+    input:not([type="submit"]),
+    textarea {
+      border: none;
+      border-bottom: 2px solid $primaryLight;
+      background-color: transparent;
+      color: $primary;
+      outline: none;
+      padding: 0;
+      padding-bottom: rem(16px);
+      transition: initial;
+
+      &:focus {
+        border-color: $primary;
+      }
+
+      &.invalid {
+        border-color: $danger !important;
+      }
+
+      &~.valid--feedback {
+        display: none;
+        font-size: rem(12px);
+
+        &.invalid {
+          color: $danger;
+          display: inline;
+        }
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  input[type="submit"] {
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.08);
+    font-size: rem(18px);
+    padding: rem(24px 40px);
+    text-align: center;
+    width: 100%;
+  }
+
+  .terms-and-conditions {
+    font-size: rem(14px);
+    margin-top: rem(32px);
+    position: relative;
+
+    a {
+      border: none;
+      color: $green;
+    }
+  }
+}
+
+section,
+.section {
+  position: relative;
+  padding: rem(56px 0);
+
+  .section-heading {
+    margin: rem(0 0 8px 0);
+  }
+
+  .sub-heading {
+    color: $mainFontColor;
+    font-size: rem(18px);
+    line-height: normal;
+    margin: rem(8px 0 0 0);
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $desktopWidth;
+  padding: 0 15px;
+  position: relative;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: rem(111px);
+}
+
+#lg-download {
+  border: none !important;
+}
+
+@import "./modules/header.scss";
+
+@import "./modules/breadcrumbs.scss";
+
+@import "./modules/banner.scss";
+
+@import "./modules/about.scss";
+
+@import "./modules/advantages.scss";
+
+@import "./modules/stages_of_work.scss";
+
+@import "./modules/price.scss";
+
+@import "./modules/calculator.scss";
+
+@import "./modules/portfolio.scss";
+
+@import "./modules/reviews.scss";
+
+@import "./modules/promotions.scss";
+
+@import "./modules/articles.scss";
+
+@import "./modules/contacts.scss";
+
+@import "./modules/footer.scss";
+
+@import "./modules/modal.scss";
+
+@import "./modules/pagination.scss";
+
+@import "./modules/gallery-slider.scss";
+
+@import "./utils/media.scss";

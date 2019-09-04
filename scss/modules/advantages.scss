@@ -1,0 +1,20 @@
+.advantages {
+  margin-top: rem(56px);
+
+  &__item {
+    margin-bottom: rem(56px);
+
+    .circle {
+      background: $advantagesGradient;
+      border-radius: 50%;
+      flex: none;
+      height: rem(70px);
+      margin-right: rem(20px);
+      width: rem(70px);
+
+      img {
+        margin: 0;
+      }
+    }
+  }
+}

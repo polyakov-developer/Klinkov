@@ -1,0 +1,340 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // position: relative;
+
+  height: rem(111px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+
+  z-index: 2;
+
+  .left {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    max-width: 384px;
+    overflow: hidden;
+
+    .logo {
+      // padding: rem(0 40px 0 0);
+      padding-right: rem(40px);
+
+      img {
+        width: rem(120px);
+      }
+    }
+  }
+
+  .middle {
+    max-width: rem(1170px);
+    width: 100%;
+
+    .container {
+      align-items: center;
+      background: $primary;
+      display: flex;
+      height: 100%;
+      max-width: rem(1170px);
+      // padding: rem(40px 72px);
+      padding-left: rem(72px);
+      padding-right: rem(72px);
+    }
+
+    .phone {
+      border: none;
+      color: $default;
+
+      .big {
+        font-size: rem(22px);
+      }
+    }
+
+    .divider {
+      border: 1px solid $mainFontColor;
+      height: rem(48px);
+      margin: rem(0 32px);
+    }
+
+    .navigation {
+      ul {
+        margin: 0;
+
+        li {
+          margin-right: rem(24px);
+          padding: 0;
+
+          a {
+            border: none;
+            color: $default;
+          }
+
+          &:before {
+            content: initial;
+          }
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .burger {
+      align-items: center;
+      background-color: $primary;
+      color: $default;
+      cursor: pointer;
+      display: none;
+      height: 100%;
+      cursor: pointer;
+      padding-left: rem(32px);
+      width: 100%;
+
+      .lines-wrapper {
+        margin-right: rem(16px);
+
+        span {
+          background: $default;
+          display: block;
+          height: 2px;
+          margin: auto;
+          margin-bottom: 5px;
+          position: relative;
+          transform-origin: 4px 0px;
+          transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+          width: 24px;
+          z-index: 1;
+
+          &:first-child {
+            transform-origin: 0% 0%;
+          }
+
+          &:nth-last-child(2) {
+            transform-origin: 0% 100%;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &>span {
+        font-size: rem(16px);
+      }
+
+      &.active {
+        .lines-wrapper {
+          span {
+            opacity: 1;
+            transform: rotate(45deg);
+
+            &:nth-child(2) {
+              opacity: 0;
+              transform: rotate(0deg) scale(0.2, 0.2);
+            }
+
+            &:nth-child(3) {
+              transform: rotate(-45deg) translate(-2px, -2px);
+            }
+          }
+        }
+      }
+    }
+
+    .phone--mobile {
+      background-color: $mainFontColor;
+      background-image: url(../images/phone.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      display: none;
+      height: 100%;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    max-width: 384px;
+    overflow: hidden;
+
+    .request {
+      // padding: rem(42px 0);
+      text-align: center;
+    }
+  }
+
+  .logo {
+    align-items: center;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+
+    span {
+      color: $primaryLight;
+      font-size: rem(14px);
+      margin-left: rem(24px);
+      max-width: rem(170px);
+    }
+  }
+
+  .request {
+    align-items: center;
+    background: $green;
+    color: $default;
+    cursor: pointer;
+    display: inline-flex;
+    flex: 1;
+    font-size: rem(18px);
+    height: 100%;
+    justify-content: center;
+    // padding: rem(42px 98px);
+    padding-left: rem(98px);
+    padding-right: rem(98px);
+    max-width: rem(384px);
+    width: 100%;
+  }
+
+  .mobile-menu {
+    background: $primary;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    transition: max-height .5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    width: 100%;
+
+    .mobile-menu-wrapper {
+      // height: 100%;
+      height: 100vh;
+      overflow: scroll;
+      padding: rem(80px 30px);
+
+      ul {
+        display: flex;
+        flex-direction: column;
+
+        li {
+          padding: 0;
+          margin-bottom: rem(24px);
+
+          a {
+            border: none;
+            color: $default;
+            font-size: rem(24px);
+            font-weight: 800;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+
+          &::before {
+            content: initial;
+          }
+        }
+      }
+
+      hr {
+        background-color: $mainFontColor;
+        border: none;
+        height: 1px;
+        margin: rem(40px 0 24px 0);
+        width: 100%;
+      }
+
+      .phone {
+        border: none;
+        color: $default;
+
+        .big {
+          font-size: rem(22px);
+        }
+      }
+    }
+
+    &.active {
+      max-height: 100vh;
+      transition: max-height .5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+      z-index: 10;
+    }
+  }
+
+  &.sticky {
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.3);
+    height: rem(79px);
+    top: -100%;
+    position: fixed;
+
+    .left {
+      .logo {
+        img {
+          width: rem(70px);
+        }
+      }
+    }
+
+    .middle {
+      .container {
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+    }
+
+    .right {
+      // max-width: rem(205px);
+
+      .request {
+        font-size: 16px;
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+    }
+
+    animation: showStickyHeader .25s;
+    animation-fill-mode: forwards;
+
+    z-index: 1000;
+  }
+
+  @keyframes showStickyHeader {
+    from {
+      top: -100%;
+    }
+
+    to {
+      top: 0;
+    }
+  }
+}
+
+// Новые стили для .middle
+.header {
+  .middle {
+
+    .container {
+      padding-right: 0;
+    }
+
+    .phone,
+    .divider {
+      // display: none;
+    }
+
+    .phone--mobile {
+      // display: block;
+      display: none;
+      margin-left: auto;
+      width: rem(88px);
+    }
+  }
+}

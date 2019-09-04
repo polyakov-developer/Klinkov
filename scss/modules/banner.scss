@@ -1,0 +1,105 @@
+.hero-banner {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  .column {
+    background-color: currentColor;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: none;
+
+    &-left {
+      max-width: 384px;
+      width: 100%;
+    }
+
+    &-middle {
+      max-width: 777px;
+      width: 100%;
+
+      .request {
+        height: 100%;
+        max-width: 100%;
+
+        padding: rem(64px 72px);
+
+        h1 {
+          color: $default;
+          @include font-size(24px, 48px, 375px, 1920px);
+          margin: 0;
+        }
+
+        .sub-heading {
+          color: $default;
+          @include font-size(16px, 24px, 375px, 1920px);
+          margin: rem(24px) 0 0 0;
+        }
+
+        form {
+          margin-top: rem(72px);
+
+          .field {
+            margin-right: rem(32px);
+
+            label {
+              color: $default;
+            }
+
+            input:not([type="submit"]) {
+              border-color: $default;
+              color: $default;
+
+              &:focus {
+                border-color: $default;
+              }
+            }
+          }
+
+          input[type="submit"] {
+            height: 100%;
+            margin-top: 0;
+            width: auto;
+          }
+
+          @include placeholder {
+            color: $default;
+          }
+        }
+      }
+    }
+
+    &-right {
+      max-width: 777px;
+      width: 100%;
+
+      .top {
+        display: flex;
+
+        .column.left {
+          flex: 1;
+          height: 330px;
+        }
+
+        .column.right {
+          flex: 1;
+          height: 330px;
+        }
+      }
+
+      .bottom {
+        .column {
+          height: 330px;
+        }
+      }
+    }
+  }
+
+  .banner {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 330px;
+  }
+}

@@ -1,0 +1,43 @@
+.reviews {
+  .tabs-wrapper {
+    margin-top: rem(40px);
+  }
+
+  .tabs {
+    border-bottom: 1px solid $borderLight;
+    padding-bottom: rem(12px);
+
+    li {
+      padding: 0;
+
+      a {
+        border: none;
+        color: $primaryLight;
+        cursor: pointer;
+        font-size: rem(14px);
+        font-weight: 800;
+        margin-right: rem(24px);
+
+        &.active {
+          border-bottom: rem(3px) solid $blue;
+          color: $primary;
+          padding-bottom: rem(13px);
+        }
+      }
+
+      &:last-of-type {
+        a {
+          margin-right: 0;
+        }   
+      }
+
+      &:before {
+        content: initial;
+      }
+    }
+  }
+
+  .tab-content {
+    margin-top: rem(24px);
+  }
+}

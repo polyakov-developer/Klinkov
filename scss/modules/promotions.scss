@@ -1,0 +1,116 @@
+.promotions {
+  &-list {
+    .promotion__item {
+      margin-bottom: rem(30px);
+
+      .image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: none;
+        display: block;
+        height: rem(200px);
+      }
+
+      .title {
+        border: none;
+        color: $primary;
+        display: inline-block;
+        font-weight: 700;
+        margin-top: rem(16px);
+        transition: color .25s ease-in-out;
+
+        &:hover {
+          color: $mainFontColor;
+          transition: color .25s ease-in-out;
+        }
+      }
+
+      &--big {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: rem(70px);
+        padding: rem(54px 96px);
+        position: relative;
+
+        .heading {
+          color: $default;
+          @include font-size(24px, 40px, 375px, 1920px);
+          font-weight: 800;
+          letter-spacing: 0.05em;
+          line-height: 1.4;
+          margin: 0;
+          text-transform: uppercase;
+        }
+
+        .sub-heading {
+          color: $default;
+          font-size: rem(24px);
+          font-weight: 500;
+        }
+
+        .popup-target {
+          position: relative;
+        }
+
+        .filter {
+          background: $filterGradient;
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+
+        &::before,
+        &::after {
+          background: $blue;
+          bottom: rem(-8px);
+          content: "";
+          display: block;
+          height: rem(8px);
+          left: 0;
+          margin: auto;
+          opacity: 0.3;
+          position: absolute;
+          right: 0;
+          width: calc(100% - 28px);
+        }
+
+        &::after {
+          bottom: rem(-16px);
+          opacity: 0.15;
+          width: calc(100% - 48px);
+        }
+      }
+    }
+  }
+
+  &-frontpage {
+    background: $promotionsGradient;
+
+    .promotions-list {
+      margin-top: rem(40px);
+    }
+  }
+
+  &-innerpage {
+    .date {
+      color: #878C91;
+
+      &:after {
+        border-bottom: 3px solid #00B84C;
+        content: "";
+        display: block;
+        margin-top: rem(16px);
+        max-width: rem(170px);
+        width: 100%;
+      }
+    }
+
+    .image {
+      width: 100%;
+    }
+  }
+}

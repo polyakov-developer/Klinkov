@@ -1,0 +1,14 @@
+{
+  "name": "klinkov",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "FiveDigital",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "sass-rem": "^2.0.1",
+    "swiper": "^4.5.0"
+  }
+}

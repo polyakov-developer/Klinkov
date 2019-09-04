@@ -1,0 +1,141 @@
+.articles {
+  &-list {
+    margin-top: rem(24px);
+
+    .articles__item {
+      .image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: none;
+        display: block;
+        height: rem(200px);
+      }
+
+      .title {
+        border: none;
+        color: $primary;
+        display: inline-block;
+        font-weight: 700;
+        margin: 0;
+        transition: color .25s ease-in-out;
+
+        &:hover {
+          color: $green;
+          transition: color .25s ease-in-out;
+        }
+      }
+
+      .description {
+        margin-top: rem(16px);
+      }
+
+      .more {
+        background-color: transparent;
+        border: 1px solid #D7D9DA;
+        border-radius: 2px;
+        color: #878C91;
+        display: inline-block;
+        padding: rem(11px 24px);
+        transition: .25s ease-in-out;
+
+        &:hover {
+          border-color: $green;
+          color: $green;
+          transition: .25s ease-in-out;
+        }
+      }
+    }
+
+    hr {
+      margin: rem(40px 0);
+    }
+  }
+
+  &-frontpage {
+    .articles-list {
+      .articles__item {
+        margin-bottom: rem(30px);
+
+        .title {
+          margin-top: rem(16px);
+
+          &:hover {
+            color: $mainFontColor;
+          }
+        }
+      }
+    }
+  }
+
+  &-innerpage {
+    .image {
+      width: 100%;
+    }
+
+    .anons {
+      margin: rem(56px 0 32px 0);
+    }
+
+    hr {
+      margin: rem(80px 0 40px 0);
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      a {
+        align-items: center;
+        border: none;
+        color: #5F666C;
+        display: flex;
+        flex: 1;
+        font-size: 18px;
+        justify-content: space-between;
+        margin-right: rem(48px);
+        transition: .25s ease-in-out;
+
+        .title {
+          text-align: center;
+          width: 100%;
+        }
+
+        .btn {
+          background-color: $default;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 12px;
+          border: 1px solid #F4F5F6;
+          border-radius: 4px;
+          height: rem(40px);
+          transition: background-color .25s ease-in-out;
+          width: rem(40px);
+
+          &-prev {
+            background-image: url(../images/prev-page.svg);
+          }
+
+          &-next {
+            background-image: url(../images/next-page.svg);
+          }
+        }
+
+        &:hover {
+          color: $green;
+          transition: .25s ease-in-out;
+
+          .btn {
+            background-color: #CCF1DB;
+            transition: background-color .25s ease-in-out;
+          }
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

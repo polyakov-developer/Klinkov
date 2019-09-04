@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="FiveDigital | Vadim Polyakov">
+  <title>Клинков</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <script type="text/javascript" src="https://vk.com/js/api/openapi.js?161"></script>
+
+  <script type="text/javascript">
+    VK.init({
+      apiId: 7052422,
+      onlyWidgets: true
+    });
+  </script>
+</head>
+
+<body>
+  <header id="header" class="header">
+    <div class="mobile-bar">
+      <div class="top">
+        <div id="burger" class="burger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <a href="tel:8(922)632-17-02" class="phone"></a>
+        <button class="request button popup-trigger" data-target="#requestModal" onclick="openModal(event)">Заявка на
+          химчистку</button>
+      </div>
+      <a href="/" class="logo">
+        <img src="./images/logo.svg" alt="Логотип КлинКов" />
+        <span>Профессиональная химчистка ковров в Челябинске</span>
+      </a>
+      <nav id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-wrapper">
+          <ul>
+            <li><a href="#price">Цены</a></li>
+            <li><a href="#portfolio">Наши работы</a></li>
+            <li><a href="#promotions">Акции</a></li>
+            <li><a href="#articles">Полезно знать</a></li>
+            <li><a href="#about-us">Компания</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+          <hr>
+          <a href="tel:8(922)632-17-02" class="phone">8 (922) <span class="big">632-17-02</span></a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="topbar">
+      <a href="/" class="logo">
+        <img src="./images/logo.svg" alt="Логотип КлинКов" />
+        <span>Профессиональная химчистка ковров в Челябинске</span>
+      </a>
+
+      <button class="request button popup-trigger" data-target="#requestModal" onclick="openModal(event)">Заявка на
+        химчистку</button>
+    </div>
+
+    <div class="left">
+      <a href="/" class="logo">
+        <img src="./images/logo.svg" alt="Логотип КлинКов" />
+        <span>Профессиональная химчистка ковров в Челябинске</span>
+      </a>
+    </div>
+
+    <div class="middle">
+      <div class="container">
+        <a href="tel:8(922)632-17-02" class="phone">8 (922) <span class="big">632-17-02</span></a>
+        <div class="divider"></div>
+        <nav class="navigation">
+          <ul class="d-flex">
+            <li><a href="#price">Цены</a></li>
+            <li><a href="#portfolio">Наши работы</a></li>
+            <li><a href="#promotions">Акции</a></li>
+            <li><a href="#articles">Полезно знать</a></li>
+            <li><a href="#about-us">Компания</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="right">
+      <button class="request button popup-trigger" data-target="#requestModal" onclick="openModal(event)">Заявка на
+        химчистку</button>
+    </div>
+  </header>
+
+  <main id="content" class="main-content">
+    <!-- Hero-banner -->
+    <section id="hero-banner" class="section hero-banner no-paddings">
+      <div class="column column-left" style="background-image: url(./images/banner-1.jpg);"></div>
+      <div class="column column-middle" style="background: linear-gradient(54.62deg, #004D84 0%, #2F89CA 100%);">
+        <div class="request">
+          <h1>Профессиональная химчистка ковров в Челябинске</h1>
+          <p class="sub-heading">Вернём вашему ковру первозданный вид — избавим от запахов, пятен и пыли. Сами заберём
+            его и доставим абсолютно бесплатно.</p>
+          <form action="/php/feedback.php" id="form-request-banner" class="form-ajax d-flex flex-column flex-sm-row"
+            method="POST" onsubmit="submitForm(event)">
+            <div class="field">
+              <label for="cons-phone">Номер телефона</label>
+              <input type="tel" name="f_Telephone" id="cons-phone" required>
+              <span class="valid--feedback">Необходимо ввести Ваш номер телефона</span>
+            </div>
+            <input type="submit" class="button" value="Заказать консультацию">
+          </form>
+        </div>
+      </div>
+      <div class="column column-right">
+        <div class="top">
+          <div class="column left" style="background-image: url(./images/banner-2.jpg);"></div>
+          <div class="column right" style="background-image: url(./images/banner-3.jpg);"></div>
+        </div>
+        <div class="bottom">
+          <div class="column" style="background-image: url(./images/banner-4.jpg);"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About-us -->
+    <section id="about-us" class="section about-us pb-0">
+      <div class="container">
+        <!-- Text -->
+        <div class="d-flex flex-wrap flex-lg-nowrap align-items-center">
+          <picture class="d-flex justify-content-center justify-content-lg-start w-100">
+            <source media="(max-width: 1024px)" srcset="./images/about-us-1024.jpg">
+            <source media="(min-width: 1025px)" srcset="./images/about-us.png">
+            <img src="./images/about-us.png" class="mb-5 mb-lg-0" alt="Изображение сотрудника с ковром">
+          </picture>
+          <div>
+            <p class="section-heading h2">О компании</p>
+            <div class="text">Компания «КлинКов» — это профессиональный цех по стирке ковровых изделий. В своей работе
+              мы используем
+              только лучшее оборудование производства Турции, Италии, США. Пятновыведение и стирка ковров производится с
+              использованием профессиональных гипоаллергенных средств ведущих производителей Турции, Германии, России.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantages -->
+    <section id="advantages" class="section advantages pt-0">
+      <div class="container">
+        <div class="row">
+          <div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex align-items-center">
+            <span class="circle d-flex align-items-center justify-content-center"><img src="./images/advantages-1.svg"
+                alt="Высокое качество"></span>
+            <span class="description">Высокое качество стирки и короткие сроки выполнения заказа</span>
+          </div>
+          <div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex align-items-center">
+            <span class="circle d-flex align-items-center justify-content-center"><img src="./images/advantages-2.svg"
+                alt="Низкие цены"></span>
+            <span class="description">Одни из самых низких цен в Челябинске среди профессиональных цехов</span>
+          </div>
+          <div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex align-items-center">
+            <span class="circle d-flex align-items-center justify-content-center"><img src="./images/advantages-3.svg"
+                alt="Высококачественная химия"></span>
+            <span class="description">Примененяем профессиональные шампуни и пятновыводители</span>
+          </div>
+          <div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex align-items-center">
+            <span class="circle d-flex align-items-center justify-content-center"><img src="./images/advantages-4.svg"
+                alt="Озонатор"></span>
+            <span class="description">Примененяем озонатор (уничтожает 99% болезнетворных микроорганизмов)</span>
+          </div>
+          <div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex align-items-center">
+            <span class="circle d-flex align-items-center justify-content-center"><img src="./images/advantages-5.svg"
+                alt="Профессиональное оборудование"></span>
+            <span class="description">Используем профессиональное оборудование полного цикла</span>
+          </div>
+          <div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex align-items-center">
+            <span class="circle d-flex align-items-center justify-content-center"><img src="./images/advantages-6.svg"
+                alt="Бесплатная доставка"></span>
+            <span class="description">Бесплатно забираем ковер и доставляем обратно (при заказе от 850 руб.)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stages of work -->
+    <section id="stages-of-work" class="section stages-of-work">
+      <div class="container">
+        <p class="section-heading h2 text-center">Этапы работы</p>
+        <div class="row d-none d-md-flex">
+          <div class="stages__item col-md-4 col-xl-3">
+            <div class="row no-gutters align-items-center">
+              <div class="image col-12 col-lg-6 no-paddings" style="background-image: url('./images/stage-1.jpg')"><span
+                  class="number">01</span></div>
+              <div class="divider col-6 no-paddings"></div>
+              <div class="desc col-12 no-paddings">Бесплатно забираем от клиента (при заказе от 850 руб.)</div>
+            </div>
+          </div>
+          <div class="stages__item col-md-4 col-xl-3">
+            <div class="row no-gutters align-items-center">
+              <div class="image col-12 col-lg-6 no-paddings" style="background-image: url('./images/stage-2.jpg')">
+                <span class="number">02</span>
+              </div>
+              <div class="divider col-6 no-paddings"></div>
+              <div class="desc col-12 no-paddings">Детальный осмотр на предмет пятен и повреждений ковра</div>
+            </div>
+          </div>
+          <div class="stages__item col-md-4 col-xl-3">
+            <div class="row no-gutters align-items-center">
+              <div class="image col-12 col-lg-6 no-paddings" style="background-image: url('./images/stage-3.jpg')">
+                <span class="number">03</span>
+              </div>
+              <div class="divider col-6 no-paddings"></div>
+              <div class="desc col-12 no-paddings">Удаление пыли и песка в специальной пылевыбивальной машине</div>
+            </div>
+          </div>
+          <div class="stages__item col-md-4 col-xl-3">
+            <div class="row no-gutters align-items-center">
+              <div class="image col-12 col-lg-6 no-paddings" style="background-image: url('./images/stage-4.jpg')">
+                <span class="number">04</span>
+              </div>
+              <div class="divider col-6 no-paddings"></div>
+              <div class="desc col-12 no-paddings">Пятновыведение</div>
+            </div>
+          </div>
+          <div class="stages__item col-md-4 col-xl-3">
+            <div class="row no-gutters align-items-center">
+              <div class="image col-12 col-lg-6 no-paddings" style="background-image: url('./images/stage-5.jpg')">
+                <span class="number">05</span>
+              </div>
+              <div class="divider col-6 no-paddings"></div>
+              <div class="desc col-12 no-paddings">Стирка с применением специальных шампуней и оборудования</div>
+            </div>
+          </div>
+          <div class="stages__item col-md-4 col-xl-3">
+            <div class="row no-gutters align-items-center">
+              <div class="image col-12 col-lg-6 no-paddings" style="background-image: url('./images/stage-6.jpg')">
+                <span class="number">06</span>
+              </div>
+              <div class="divider col-6 no-paddings"></div>
+              <div class="desc col-12 no-paddings">Полоскание и отжим в центрифуге</div>
+            </div>
+          </div>
+          <div class="stages__item col-md-4 col-xl-3">
+            <div class="row no-gutters align-items-center">
+              <div class="image col-12 col-lg-6 no-paddings" style="background-image: url('./images/stage-7.jpg')">
+                <span class="number">07</span>
+              </div>
+              <div class="divider col-6 no-paddings"></div>
+              <div class="desc col-12 no-paddings">Сушка в специальной камере с последующим озонированием</div>
+            </div>
+          </div>
+          <div class="stages__item col-md-4 col-xl-3">
+            <div class="row no-gutters align-items-center">
+              <div class="image col-12 col-lg-6 no-paddings" style="background-image: url('./images/stage-8.jpg')">
+                <span class="number">08</span>
+              </div>
+              <div class="divider col-6 no-paddings"></div>
+              <div class="desc col-12 no-paddings">Финишная обработка ковра (поднятие ворса, обработка пылесосом)</div>
+            </div>
+          </div>
+          <div class="stages__item col-md-4 col-xl-3">
+            <div class="row no-gutters align-items-center">
+              <div class="image col-12 col-lg-6 no-paddings" style="background-image: url('./images/stage-9.jpg')">
+                <span class="number">09</span>
+              </div>
+              <div class="divider col-6 no-paddings"></div>
+              <div class="desc col-12 no-paddings">Упаковка</div>
+            </div>
+          </div>
+          <div class="stages__item col-md-4 col-xl-3">
+            <div class="row no-gutters align-items-center">
+              <div class="image col-12 col-lg-6 no-paddings" style="background-image: url('./images/stage-10.jpg')">
+                <span class="number">10</span>
+              </div>
+              <div class="desc col-12 no-paddings">Доставка ковра клиенту</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Version -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper container">
+          <div class="swiper-slide">
+            <div class="stages__item">
+              <div class="image" style="background-image: url('./images/stage-1.jpg')">
+                <span class="number">01</span>
+              </div>
+              <div class="divider"></div>
+              <div class="desc">Бесплатно забираем от клиента (при заказе от 850 руб.)</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="stages__item">
+              <div class="image" style="background-image: url('./images/stage-2.jpg')">
+                <span class="number">02</span>
+              </div>
+              <div class="divider"></div>
+              <div class="desc">Детальный осмотр на предмет пятен и повреждений ковра</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="stages__item">
+              <div class="image" style="background-image: url('./images/stage-3.jpg')">
+                <span class="number">03</span>
+              </div>
+              <div class="divider"></div>
+              <div class="desc">Удаление пыли и песка в специальной пылевыбивальной машине</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="stages__item">
+              <div class="image" style="background-image: url('./images/stage-4.jpg')">
+                <span class="number">04</span>
+              </div>
+              <div class="divider"></div>
+              <div class="desc">Пятновыведение</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="stages__item">
+              <div class="image" style="background-image: url('./images/stage-5.jpg')">
+                <span class="number">05</span>
+              </div>
+              <div class="divider"></div>
+              <div class="desc">Стирка с применением специальных шампуней и оборудования</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="stages__item">
+              <div class="image" style="background-image: url('./images/stage-6.jpg')">
+                <span class="number">06</span>
+              </div>
+              <div class="divider"></div>
+              <div class="desc">Полоскание и отжим в центрифуге</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="stages__item">
+              <div class="image" style="background-image: url('./images/stage-7.jpg')">
+                <span class="number">07</span>
+              </div>
+              <div class="divider"></div>
+              <div class="desc">Сушка в специальной камере с последующим озонированием</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="stages__item">
+              <div class="image" style="background-image: url('./images/stage-8.jpg')">
+                <span class="number">08</span>
+              </div>
+              <div class="divider"></div>
+              <div class="desc">Финишная обработка ковра (поднятие ворса, обработка пылесосом)</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="stages__item">
+              <div class="image" style="background-image: url('./images/stage-9.jpg')">
+                <span class="number">09</span>
+              </div>
+              <div class="divider"></div>
+              <div class="desc">Упаковка</div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="stages__item">
+              <div class="image" style="background-image: url('./images/stage-10.jpg')">
+                <span class="number">10</span>
+              </div>
+              <div class="desc">Доставка ковра клиенту</div>
+            </div>
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-stages-of-work"></div>
+      </div>
+    </section>
+
+    <!-- Price & Calculator -->
+    <section id="price" class="section price">
+      <div class="container">
+        <div class="row no-gutters">
+          <!-- Price list -->
+          <div class="col-12 col-xl-8">
+            <p class="section-heading h2">Цены на стирку ковров </p>
+            <p class="sub-heading">Сориентируйтесь в таблице или используйте калькулятор</p>
+            <div class="price-list">
+              <div class="price-list__item">
+                <div class="row no-gutters">
+                  <div class="col-8">
+                    <p class="title">Химчистка ковра с ворсом менее 2 см</p>
+                    <p class="description">Синтетические ковры: полипропилен, полиэстер, полиамид, акрил / Натуральные
+                      ковры (фабричные): полушерсть, шерсть.</p>
+                  </div>
+                  <div class="col-3 offset-1 text-right">
+                    <p class="price">180 руб./кв. м</p>
+                  </div>
+                </div>
+              </div>
+              <div class="price-list__item">
+                <div class="row no-gutters">
+                  <div class="col-8">
+                    <p class="title">Химчистка ковра на клееной основе</p>
+                    <p class="description">Синтетические ковры: полипропилен, полиэстер, полиамид, акрил / Натуральные
+                      ковры (фабричные):полушерсть, шерсть</p>
+                  </div>
+                  <div class="col-3 offset-1 text-right">
+                    <p class="price">200 руб./кв. м</p>
+                  </div>
+                </div>
+              </div>
+              <div class="price-list__item">
+                <div class="row no-gutters">
+                  <div class="col-8">
+                    <p class="title">Химчистка ковра с ворсом более 2 см (Shaggy)</p>
+                    <p class="description">Синтетические ковры: полипропилен, полиэстер, полиамид, акрил / Натуральные
+                      ковры (фабричные): полушерсть, шерсть</p>
+                  </div>
+                  <div class="col-3 offset-1 text-right">
+                    <p class="price">220 руб./кв. м</p>
+                  </div>
+                </div>
+              </div>
+              <div class="price-list__item">
+                <div class="row no-gutters">
+                  <div class="col-8">
+                    <p class="title">Химчистка ковра с ворсом менее 2 см</p>
+                    <p class="description">Натуральные ковры (фабричные): вискоза, сизаль, хлопок, шёлк</p>
+                  </div>
+                  <div class="col-3 offset-1 text-right">
+                    <p class="price">400 руб./кв. м</p>
+                  </div>
+                </div>
+              </div>
+              <div class="price-list__item">
+                <div class="row no-gutters">
+                  <div class="col-8">
+                    <p class="title">Химчистка ковра на клееной основе</p>
+                    <p class="description">Натуральные ковры (фабричные): вискоза, сизаль, хлопок, шёлк</p>
+                  </div>
+                  <div class="col-3 offset-1 text-right">
+                    <p class="price">450 руб./кв. м</p>
+                  </div>
+                </div>
+              </div>
+              <div class="price-list__item">
+                <div class="row no-gutters">
+                  <div class="col-8">
+                    <p class="title">Чистка ворса (ковёр ручной работы)</p>
+                    <p class="description">Шерсть, шерсть + шёлк</p>
+                  </div>
+                  <div class="col-3 offset-1 text-right">
+                    <p class="price">600 руб./кв. м</p>
+                  </div>
+                </div>
+              </div>
+              <div class="price-list__item">
+                <div class="row no-gutters">
+                  <div class="col-8">
+                    <p class="title">Чистка ворса (ковёр ручной работы)</p>
+                    <p class="description">Шёлк</p>
+                  </div>
+                  <div class="col-3 offset-1 text-right">
+                    <p class="price">1 000 руб./кв. м</p>
+                  </div>
+                </div>
+              </div>
+              <div class="price-list__item">
+                <div class="row no-gutters">
+                  <div class="col-8">
+                    <p class="title">Срочная чистка ковра за 24 часа</p>
+                    <p class="description"></p>
+                  </div>
+                  <div class="col-3 offset-1 text-right">
+                    <p class="price">+100% <br> <span class="mark">к базовой стоимости</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="price-list__item">
+                <div class="row no-gutters">
+                  <div class="col-8">
+                    <p class="title">Химчистка особо сильных загрязнений на ковре</p>
+                    <p class="description">После пожара, с запахами и следами животного происхождения, плесени, рвоты
+                    </p>
+                  </div>
+                  <div class="col-3 offset-1 text-right">
+                    <p class="price">+30% <br> <span class="mark">к базовой стоимости</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="price-list__item">
+                <div class="row no-gutters">
+                  <div class="col-8">
+                    <p class="title">Химчистка мокрого ковра</p>
+                    <p class="description">После потопа</p>
+                  </div>
+                  <div class="col-3 offset-1 text-right">
+                    <p class="price">+50% <br> <span class="mark">к базовой стоимости</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Calculator -->
+          <div class="col-12 col-xl-4">
+            <div id="calculator" class="calculator">
+              <h4>Калькулятор</h4>
+              <div class="fields-list">
+                <!-- Shape -->
+                <div class="field-set field-set--row field-set-forma">
+                  <label class="caption">Форма ковра</label>
+                  <div class="field">
+                    <input type="radio" name="f_CarpetShape[]" id="shape-1" value="1"
+                      onchange="changeCarpetShape(event)">
+                    <label for="shape-1" class="value align-items-center">
+                      <span><img src="./images/shape-1.svg" alt="Прямоугольная форма"></span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <input type="radio" name="f_CarpetShape[]" id="shape-2" value="2"
+                      onchange="changeCarpetShape(event)">
+                    <label for="shape-2" class="value align-items-center">
+                      <span><img src="./images/shape-2.svg" alt="Овальная форма"></span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <input type="radio" name="f_CarpetShape[]" id="shape-3" value="3"
+                      onchange="changeCarpetShape(event)">
+                    <label for="shape-3" class="value align-items-center">
+                      <span><img src="./images/shape-3.svg" alt="Круглая форма"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Length & Width -->
+                <div class="field-set field-set--row">
+                  <div class="field">
+                    <label for="length" class="caption">Длина, м</label>
+                    <input type="number" name="f_Length" id="length" class="value" min="0" max="99">
+                  </div>
+                  <div class="field">
+                    <label for="width" class="caption">Ширина, м</label>
+                    <input type="number" name="f_Width" id="width" class="value" min="0" max="99">
+                  </div>
+                </div>
+
+                <!-- Diameter -->
+                <div class="field">
+                  <label for="diameter" class="caption">Диаметр, м (для круглых ковров)</label>
+                  <input type="number" name="f_Diameter" id="diameter" class="value" min="0" max="99">
+                </div>
+
+                <!-- Long nap -->
+                <div class="field">
+                  <label class="caption"></label>
+                  <input type="checkbox" name="f_isLongNap" id="long-nap">
+                  <label for="long-nap" class="value">
+                    <span>Длинный ворс (более 2см)</span>
+                  </label>
+                </div>
+
+                <!-- Material -->
+                <div class="field-set field-set--column">
+                  <label class="caption">Материал ковра</label>
+                  <div class="field">
+                    <input type="radio" name="f_CarpetMaterial[]" id="material-1" value="1">
+                    <label for="material-1" class="value">
+                      <span>Синтетика, полушерсть, шерсть</span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <input type="radio" name="f_CarpetMaterial[]" id="material-2" value="2">
+                    <label for="material-2" class="value">
+                      <span>Вискоза, сизаль, хлопок, шёлк (фабричные ковры)</span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <input type="radio" name="f_CarpetMaterial[]" id="material-3" value="3">
+                    <label for="material-3" class="value">
+                      <span>Шерсть, шерсть+шёлк (ковры ручной работы)</span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <input type="radio" name="f_CarpetMaterial[]" id="material-4" value="4">
+                    <label for="material-4" class="value">
+                      <span>Шёлк (ковры ручной работы)</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Discounts -->
+                <div class="field-set field-set--column">
+                  <label class="caption">Скидки</label>
+                  <div class="field">
+                    <input type="radio" name="f_Sale[]" id="sale-1" value="1">
+                    <label for="sale-1" class="value">
+                      <span>-10% пенсионерам, ветеранам, многодетным семьям</span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <input type="radio" name="f_Sale[]" id="sale-2" value="2">
+                    <label for="sale-2" class="value">
+                      <span>-10% при повторном обращении</span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <input type="radio" name="f_Sale[]" id="sale-3" value="3">
+                    <label for="sale-3" class="value">
+                      <span>-15% именнинику (3 дня до и 3 после Дня рождения)</span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <input type="radio" name="f_Sale[]" id="sale-4" value="4">
+                    <label for="sale-4" class="value">
+                      <span>-20% скидка для всех (июль – август)</span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <input type="checkbox" name="f_isBandMember" id="sale-5" value="5">
+                    <label for="sale-5" class="value">
+                      <span>-5% для участников нашей группы (ВК, ОК, Инстаграмм)</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Total -->
+              <div class="total-wrapper">
+                <span class="total">Итого: </span>
+                <div class="total-cost">
+                  <div class="old d-none">
+                    <span class="value">0</span>
+                    <span class="currency">руб.</span>
+                  </div>
+                  <div class="current">
+                    <span class="value">0</span>
+                    <span class="currency">руб.</span>
+                  </div>
+                </div>
+                <input type="hidden" name="f_TotalOriginal" id="total-cost-original" value="0">
+                <input type="hidden" name="f_TotalDiscount" id="total-cost-discount" value="0">
+              </div>
+
+              <button class="button" data-target="#calcModal" onclick="getFieldsOfCalc()">Оставить заявку</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section portfolio">
+      <div class="container">
+        <p class="section-heading h2 text-center">Примеры работ</p>
+        <p class="sub-heading text-center">Посмотрите как выглядели ковры клиентов до и после нашей стирки</p>
+        <!-- Swiper -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide d-flex justify-content-center">
+              <div class="image before">
+                <img src="./images/slide-before.jpg" alt="Фотография ковра 'до'">
+              </div>
+              <div class="image after">
+                <img src="./images/slide-after.jpg" alt="Фотография ковра 'после'">
+              </div>
+            </div>
+            <div class="swiper-slide d-flex justify-content-center">
+              <div class="image before">
+                <img src="./images/slide-before.jpg" alt="Фотография ковра 'до'">
+              </div>
+              <div class="image after">
+                <img src="./images/slide-after.jpg" alt="Фотография ковра 'после'">
+              </div>
+            </div>
+            <div class="swiper-slide d-flex justify-content-center">
+              <div class="image before">
+                <img src="./images/slide-before.jpg" alt="Фотография ковра 'до'">
+              </div>
+              <div class="image after">
+                <img src="./images/slide-after.jpg" alt="Фотография ковра 'после'">
+              </div>
+            </div>
+            <div class="swiper-slide d-flex justify-content-center">
+              <div class="image before">
+                <img src="./images/slide-before.jpg" alt="Фотография ковра 'до'">
+              </div>
+              <div class="image after">
+                <img src="./images/slide-after.jpg" alt="Фотография ковра 'после'">
+              </div>
+            </div>
+            <div class="swiper-slide d-flex justify-content-center">
+              <div class="image before">
+                <img src="./images/slide-before.jpg" alt="Фотография ковра 'до'">
+              </div>
+              <div class="image after">
+                <img src="./images/slide-after.jpg" alt="Фотография ковра 'после'">
+              </div>
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination swiper-pagination-portfolio d-flex align-items-center justify-content-center">
+          </div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next d-none d-xl-block"></div>
+          <div class="swiper-button-prev d-none d-xl-block"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section reviews">
+      <div class="container">
+        <p class="section-heading h2 text-center">Отзывы</p>
+        <p class="sub-heading text-center">Наши клиенты о нас и нашей работе</p>
+        <!-- Tabs -->
+        <div class="tabs-wrapper d-flex justify-content-center">
+          <ul class="tabs d-inline-flex" id="reviews-tab">
+            <li class="tabs__item">
+              <a class="tab-link active text-uppercase" id="flamp-tab" data-target="flamp" onclick="changeTab(event)">На
+                Flamp.ru</a>
+            </li>
+            <li class="tabs__item">
+              <a class="tab-link text-uppercase" id="vk-tab" data-target="vk" onclick="changeTab(event)">На vk.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content" id="reviews-tab-content">
+          <div class="tab-pane active" id="flamp">
+            <a class="flamp-widget" href="//chelyabinsk.flamp.ru/firm/chistim_74_kompaniya-70000001035333680"
+              data-flamp-widget-type="responsive-new" data-flamp-widget-id="70000001035333680"
+              data-flamp-widget-width="100%" data-flamp-widget-count="3">Отзывы о нас на Флампе</a>
+            <script>
+              ! function (d, s) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                js = d.createElement(s);
+                js.async = 1;
+                js.src = "//widget.flamp.ru/loader.js";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, "script");
+            </script>
+          </div>
+          <div class="tab-pane" id="vk">
+            <div id="vk_comments"></div>
+            <script type="text/javascript">
+              VK.Widgets.Comments("vk_comments", {
+                limit: 5,
+                attach: "*"
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promotions -->
+    <section id="promotions" class="section promotions">
+      <div class="container">
+        <p class="section-heading h2">Акции и скидки</p>
+        <div class="promotions-list">
+          <div class="row">
+            <div class="col-12">
+              <div class="promotion__item promotion__item--big"
+                style="background-image: url(../images/promotion-1.jpg)">
+                <div class="filter"></div>
+                <div class="row align-items-center justify-content-between no-gutters">
+                  <div class="col-12 col-lg-6">
+                    <p class="heading">Жаркая пора — горячие скидки!</p>
+                    <p class="sub-heading">Скидка -20% в июле и августе для всех</p>
+                  </div>
+                  <div class="col-12 col-lg-5 col-xl-4 text-lg-right">
+                    <button class="button popup-trigger" data-target="#requestModal" onclick="openModal(event)">Оставить
+                      заявку</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="promotion__item">
+                <a href="#promotion__item-2" class="image" style="background-image: url(../images/promotion-2.jpg)"></a>
+                <a href="#promotion__item-2" class="title">Скидка -5% для участников наших групп в социальных сетях</a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="promotion__item">
+                <a href="#promotion__item-3" class="image" style="background-image: url(../images/promotion-3.jpg)"></a>
+                <a href="#promotion__item-3" class="title">Скидка -10% пенсионерам, ветеранам и многодетным семьям</a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="promotion__item">
+                <a href="#promotion__item-4" class="image" style="background-image: url(../images/promotion-4.jpg)"></a>
+                <a href="#promotion__item-4" class="title">Скидка -15 % в День рождения</a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="promotion__item">
+                <a href="#promotion__item-5" class="image" style="background-image: url(../images/promotion-5.jpg)"></a>
+                <a href="#promotion__item-5" class="title">Скидка -10% скидка при повторном обращении</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles -->
+    <section id="articles" class="section articles">
+      <div class="container">
+        <p class="section-heading h2">Полезно знать</p>
+        <div class="articles-list">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="articles__item">
+                <a href="#articles-1" class="image" style="background-image: url(../images/article-1.jpg)"></a>
+                <a href="#articles-1" class="title">Нужны ли дома ковры?</a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="articles__item">
+                <a href="#articles-2" class="image" style="background-image: url(../images/article-2.jpg)"></a>
+                <a href="#articles-2" class="title">Ковёр — пылесборник?</a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="articles__item">
+                <a href="#articles-3" class="image" style="background-image: url(../images/article-3.jpg)"></a>
+                <a href="#articles-3" class="title">Нужно ли стирать ковры?</a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="articles__item">
+                <a href="#articles-4" class="image" style="background-image: url(../images/article-4.jpg)"></a>
+                <a href="#articles-4" class="title">Дорого ли стирать ковры?</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-12 col-lg-auto text-sm-center text-lg-left">
+          <a href="/" class="logo"><img src="./images/logo.svg" alt="Логотип Клинков"></a>
+        </div>
+        <div class="col">
+          <div class="row no-gutters">
+            <div class="col-12 col-lg mt-4 mt-lg-0">
+              <span class="copyright">ООО «Клинков», 2010–2019</span>
+            </div>
+            <div class="col-12 col-lg-auto mt-2 mt-lg-0">
+              <a href="/privacy-policy/" target="_blank" class="privacy">Политика обработки персональных данных</a>
+            </div>
+          </div>
+          <hr class="d-none d-lg-block">
+          <div class="row no-gutters">
+            <div class="col-12 col-lg mt-4 mt-lg-0 d-flex flex-wrap flex-md-nowrap align-items-center payment-system">
+              <span>Мы принимаем:</span>
+              <img src="./images/visa.svg" class="payment-system__item">
+              <img src="./images/mastercard.svg" class="payment-system__item">
+              <img src="./images/mir.svg" class="payment-system__item">
+            </div>
+            <div
+              class="col-12 col-lg-auto mt-4 mt-lg-0 d-flex flex-wrap flex-md-nowrap align-items-center social-network">
+              <span>Скидки участникам наших групп:</span>
+              <a href="https://vk.com" class="social-network__item" target="_blank"><img src="./images/vk.svg"></a>
+              <a href="https://instagram.com" class="social-network__item" target="_blank"><img
+                  src="./images/inst.svg"></a>
+              <a href="https://ok.ru" class="social-network__item" target="_blank"><img src="./images/ok.svg"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- To Up -->
+  <button id="to-top" class="to-top" title="Наверх"></button>
+
+  <!-- BEGIN Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modal--success">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-body">
+          <img src="./images/success.svg" alt="">
+          <p>Ваша заявка принята! <br> Скоро мы свяжемся с вами.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="button" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END Success Modal -->
+
+  <!-- BEGIN Request Modal -->
+  <div class="modal fade" id="requestModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <form action="/php/feedback.php" id="form-request" class="form-ajax" method="POST" onsubmit="submitForm(event)">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header">
+            <h5 class="modal-title">Заявка на химчистку</h5>
+          </div>
+          <div class="modal-body">
+            <div class="field">
+              <label for="request-modal-name" class="caption">Ваше имя</label>
+              <input type="text" name="f_ContactName" id="request-modal-name" class="value" required>
+              <span class="valid--feedback">Необходимо ввести Ваше имя</span>
+            </div>
+            <div class="field">
+              <label for="request-modal-telephone" class="caption">Номер телефона</label>
+              <input type="tel" name="f_Telephone" id="request-modal-telephone" class="value" required>
+              <span class="valid--feedback">Необходимо ввести Ваш номер телефон</span>
+            </div>
+            <div class="terms-and-conditions">
+              <input type="checkbox" id="request-terms-and-conditions"
+                onchange="document.getElementById('sendRequestModal').disabled = !this.checked;">
+              <label for="request-terms-and-conditions" class="value">
+                <span>Согласен с <a href="/privacy-policy/" target="_blank">политикой обработки персональных
+                    данных</a></span>
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="submit" id="sendRequestModal" class="button" value="Заказать консультацию" disabled>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- END Request Modal -->
+
+  <!-- BEGIN Calc Modal -->
+  <div class="modal fade" id="calcModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <form action="/php/request.php" id="form-request-calc" class="form-ajax" method="POST"
+        onsubmit="submitForm(event)">
+        <div class="hidden-fields">
+
+        </div>
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header">
+            <h5 class="modal-title">Заявка на химчистку</h5>
+          </div>
+          <div class="modal-body">
+            <div class="field">
+              <label for="calc-calc-modal-name" class="caption">Ваше имя</label>
+              <input type="text" name="f_ContactName" id="calc-calc-modal-name" class="value" required>
+              <span class="valid--feedback">Необходимо ввести Ваше имя</span>
+            </div>
+            <div class="field">
+              <label for="calc-calc-modal-telephone" class="caption">Номер телефона</label>
+              <input type="tel" name="f_Telephone" id="calc-calc-modal-telephone" class="value" required>
+              <span class="valid--feedback">Необходимо ввести Ваш номер телефон</span>
+            </div>
+            <div class="terms-and-conditions">
+              <input type="checkbox" id="calc-terms-and-conditions"
+                onchange="document.getElementById('sendCalcModal').disabled = !this.checked;">
+              <label for="calc-terms-and-conditions" class="value">
+                <span>Согласен с <a href="/privacy-policy/" target="_blank">политикой обработки персональных
+                    данных</a></span>
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="submit" id="sendCalcModal" class="button" value="Заказать консультацию" disabled>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- END Calc Modal -->
+
+  <!-- jQuery -->
+  <script src="./libs/jquery-3.4.1.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="./node_modules/swiper/dist/css/swiper.min.css">
+  <script src="./node_modules/swiper/dist/js/swiper.min.js"></script>
+
+  <!-- Inputmask -->
+  <script src="./libs/input-mask/inputmask.js"></script>
+
+  <!-- ScrollLock -->
+  <script src="./libs/scroll-lock/scroll-lock.min.js"></script>
+
+  <script>
+    const swiperPortfolio = new Swiper('#portfolio .swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination-portfolio',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    const swiperStagesOfWork = new Swiper("#stages-of-work .swiper-container", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination-stages-of-work',
+        clickable: true,
+      },
+    });
+  </script>
+
+  <script src="./scripts/calculator.js"></script>
+  <script src="./scripts/submitForm.js"></script>
+  <script src="./scripts/app.js"></script>
+</body>
+
+</html>

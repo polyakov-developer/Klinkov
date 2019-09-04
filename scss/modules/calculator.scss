@@ -1,0 +1,275 @@
+.calculator {
+  background-color: #fff;
+  border: 4px solid $green;
+  margin-top: rem(56px);
+  padding: rem(32px);
+
+  h4 {
+    margin: 0;
+  }
+
+  .fields-list {
+    margin-top: rem(10px);
+
+    .caption {
+      color: $primary;
+      display: block;
+      font-weight: 700;
+      margin-bottom: rem(8px);
+      margin-top: rem(16px);
+    }
+
+    .field {
+      position: relative;
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        display: block;
+        height: 24px;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 24px;
+        z-index: -1;
+
+        &+label {
+          display: flex;
+          cursor: pointer;
+          position: relative;
+        }
+
+        &+label::before {
+          background-color: $primaryLighter;
+          border: 2px solid $borderBase;
+          border-radius: 50%;
+          content: "";
+          display: block;
+          flex: none;
+          height: rem(24px);
+          margin-right: rem(8px);
+          width: rem(24px);
+        }
+
+        &+label::after {
+          background-color: transparent;
+          border-radius: 50%;
+          content: "";
+          display: block;
+          flex: none;
+          height: rem(12px);
+          left: rem(6px);
+          position: absolute;
+          top: rem(6px);
+          width: rem(12px);
+        }
+
+        &:checked+label::after {
+          background-color: $green;
+        }
+
+        &:disabled+label {
+          cursor: no-drop;
+          opacity: .6;
+        }
+      }
+
+      input[type="checkbox"] {
+        &+label::before {
+          border-radius: 0;
+        }
+
+        &+label::after {
+          background-color: transparent;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: rem(13px 17px);
+          border-radius: 0;
+          height: rem(24px);
+          left: 0px;
+          top: 0px;
+          transition: initial;
+          width: rem(24px);
+        }
+
+        &:checked+label::before {
+          background-color: $green;
+          border-color: $green;
+        }
+
+        &:checked+label::after {
+          background-image: url(../images/checked.svg);
+        }
+      }
+    }
+
+    input.value {
+
+      &:not([type="radio"]),
+      &:not([type="checkbox"]) {
+        background: $primaryLighter;
+        border: 2px solid $borderBase;
+        color: $mainFontColor;
+        padding: rem(7px 12px);
+      }
+
+      &[type="number"] {
+        max-width: 153px;
+        width: 100%;
+      }
+
+      &:disabled {
+        cursor: no-drop;
+        opacity: .6;
+      }
+    }
+
+    .field-set {
+      &--row {
+        display: flex;
+        flex-wrap: wrap;
+
+        .caption {
+          width: 100%;
+        }
+
+        .field {
+          flex: 1;
+          margin: 0 rem(12px) 0 0;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+
+      &--column {
+        display: flex;
+        flex-direction: column;
+
+        .field {
+          margin-bottom: rem(13px);
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &-forma {
+        .field {
+          input[type="radio"] {
+            &+label::after {
+              top: rem(14px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .total-wrapper {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    margin-top: rem(24px);
+
+    .total {
+      color: $primary;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .total-cost {
+      text-align: right;
+    }
+
+    .current {
+
+      .value,
+      .currency {
+        color: $primary;
+        font-size: 32px;
+        font-weight: 800;
+      }
+    }
+
+    .old {
+      text-decoration: line-through;
+
+      .value,
+      .currency {
+        color: $primaryLight;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .button {
+    margin-top: rem(16px);
+    width: 100%;
+  }
+
+  .col {
+    border-right: 1px solid #EBEDEE;
+    margin-bottom: rem(33px);
+    padding: rem(0 36px);
+
+    .shape {
+      .field {
+        flex: none;
+      }
+    }
+
+    .length-width {
+      .field {
+        flex: none;
+        max-width: 153px;
+        width: 100%;
+      }
+    }
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      border: none;
+      padding-right: 0;
+    }
+  }
+
+  .footer {
+    background-color: transparent;
+    border-top: 1px solid #EBEDEE;
+    display: flex;
+    padding: 0;
+    padding-top: rem(32px);
+
+    .total-wrapper {
+      .total {
+        margin-right: rem(32px);
+      }
+
+      .total-cost {
+        .old {
+          text-align: left;
+        }
+      }
+    }
+
+    .button {
+      margin-left: auto;
+      margin-top: 0;
+      width: auto;
+    }
+  }
+
+  &-frontpage {
+    margin-top: 0;
+
+    .fields-list {
+      margin-top: 0;
+    }
+  }
+}

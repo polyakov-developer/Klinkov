@@ -1,0 +1,54 @@
+// Font
+$mainFont              : 'Manrope', sans-serif;
+$mainFontColor         : #5F666C;
+$mainFontSize          : 16px;
+$mainFontWeight        : 400;
+$mainLineHeight        : 1.5;
+
+// Display Size
+$desktopWidth          : 1200px;
+$smDesktopWidth        : 1150px;
+$tableWidth            : 1024px;
+$smTableWidth          : 768px;
+$phoneWidth            : 414px; //375px;
+$smPhoneWidth          : 320px;
+
+// Main Color
+$default               : #FFFFFF;
+$primary               : #374047;
+$primaryLight          : #878C91;
+$primaryLighter        : #F4F6F8;
+$green                 : #00B84C;
+$blue                  : #2F89CA;
+$placehoder            : #878C91;
+$success               : #8CC043;
+$danger                : #E75858;
+$warning               : #E07F40;
+
+// Gradient Color
+$greenGradient         : linear-gradient(180deg, #33C670 0%, #00B84C 100%);
+$blueGradient          : linear-gradient(54.62deg, #004D84 0%, #2F89CA 100%);
+$promotionsGradient    : linear-gradient(35.6deg, #ACD0EA 0%, #F4F9FC 100%), #F4F8FA;
+$advantagesGradient    : linear-gradient(135deg, #82B8DF 0%, #00B84C 100%);
+$stagesOfWorkGradient  : linear-gradient(121.35deg, #D5E7F4 0%, #CCF1DB 100%);
+$filterGradient        : linear-gradient(180deg, rgba(43, 15, 0, 0.6) 0%, rgba(0, 28, 50, 0.2) 100%);
+
+// Neutral Color
+// $neutralPrimary        : #374046;
+// $neutralPrimaryLighter : #666666;
+// $neutralRegular        : #626D75;
+
+// Border Color
+$borderBase            : #E0E2E4;
+$borderLight           : #D7D9DA;
+$borderBlue            : #2F89CA;
+// $borderLighter         : #ECEDEE;
+// $borderLink            : #A7CAE2;
+
+// RadioButton
+$radioDefault          : #F4F6F8;
+$radioChecked          : #00B84C;
+
+// Checkbox
+$checkboxDefault       : #F4F6F8;
+$checkboxChecked       : #00B84C;

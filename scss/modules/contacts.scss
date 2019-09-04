@@ -1,0 +1,121 @@
+.contacts {
+
+  .contacts-data {
+    .contact__item {
+      align-items: center;
+      color: $primary;
+      display: flex;
+      font-size: rem(18px);
+      margin-bottom: rem(15px);
+
+      i {
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: rem(10px);
+        width: rem(22px);
+      }
+
+      &.address {
+        i {
+          background-image: url(../images/location--green.svg);
+          background-position: center right;
+          background-size: rem(16px 20px);
+          height: rem(20px);
+        }
+      }
+
+      &.phone {
+        i {
+          background-image: url(../images/phone--green.svg);
+          background-position: center right;
+          background-size: rem(16px);
+          height: rem(16px);
+        }
+      }
+
+      &.email {
+        i {
+          background-image: url(../images/email--green.svg);
+          background-size: rem(22px 17px);
+          height: rem(17px);
+          margin-right: rem(10px);
+        }
+      }
+    }
+
+    .button {
+      margin-top: rem(24px);
+    }
+  }
+
+  &-frontpage {
+    height: 450px;
+
+    .map {
+      height: 100%;
+      left: 0;
+      margin-top: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    .container {
+      padding-top: rem(60px);
+      pointer-events: none;
+    }
+
+    .contacts-data {
+      background-color: $default;
+      display: inline-block;
+      padding: rem(32px);
+      margin-bottom: 0;
+
+      .h5 {
+        margin: rem(0 0 12px 0);
+      }
+
+      .contact__item {
+        align-items: center;
+        color: $primary;
+        display: flex;
+        font-size: rem(18px);
+        margin-bottom: rem(15px);
+
+        i {
+          background-position: center;
+          background-repeat: no-repeat;
+          margin-right: rem(10px);
+          width: rem(22px);
+        }
+
+        &.address {
+          i {
+            background-image: url(../images/location--green.svg);
+            background-position: center right;
+            background-size: rem(16px 20px);
+            height: rem(20px);
+          }
+        }
+
+        &.phone {
+          i {
+            background-image: url(../images/phone--green.svg);
+            background-position: center right;
+            background-size: rem(16px);
+            height: rem(16px);
+          }
+        }
+
+        &.email {
+          i {
+            background-image: url(../images/email--green.svg);
+            background-size: rem(22px 17px);
+            height: rem(17px);
+            margin-right: rem(10px);
+          }
+        }
+      }
+    }
+  }
+}

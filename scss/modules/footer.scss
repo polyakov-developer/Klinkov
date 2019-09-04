@@ -1,0 +1,58 @@
+.footer {
+  background: $primaryLighter;
+  margin-top: rem(30px);
+  padding: rem(30px 0);
+
+  .logo {
+    border: none;
+    margin-right: rem(40px);
+
+    img {
+      width: 122px;
+    }
+  }
+
+  .copyright {
+    font-size: rem(14px);
+  }
+
+  .privacy {
+    border: none;
+    color: $green;
+    font-size: rem(14px);
+  }
+
+  .payment-system {
+    span {
+      margin-right: rem(11px);
+    }
+
+    &__item {
+      margin-left: rem(10px);
+    }
+  }
+
+  .social-network {
+    span {
+      margin-right: rem(13px);
+    }
+
+    &__item {
+      border: none;
+      margin-left: rem(4px);
+    }
+  }
+
+  span {
+    color: $primaryLight;
+    font-size: rem(14px);
+  }
+
+  hr {
+    background-color: $default;
+    border: none;
+    height: 1px;
+    margin: rem(18px 0);
+    width: 100%;
+  }
+}

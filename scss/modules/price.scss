@@ -1,0 +1,46 @@
+.price {
+  .price-list {
+    margin-top: rem(25px);
+
+    &__item {
+      border-top: 1px solid $borderLight;
+      padding: rem(16px 24px);
+
+      .title {
+        color: $primary;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .description {
+        color: $primaryLight;
+        font-size: rem(14px);
+        margin: rem(4px) 0 0 0;
+      }
+
+      .price {
+        color: $primary;
+        font-weight: 700;
+        margin: 0;
+
+        .mark {
+          background-color: transparent;
+          color: $primaryLight;
+          font-size: rem(14px);
+          font-weight: 400;
+        }
+      }
+
+      &:last-of-type {
+        border-bottom: 1px solid $borderLight;
+      }
+    }
+  }
+
+  &-frontpage {
+    .price-list {
+      margin-top: rem(57px);
+      padding-right: rem(30px);
+    }
+  }
+}

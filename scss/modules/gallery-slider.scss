@@ -1,0 +1,103 @@
+.gallery-slider {
+  .swiper-container {
+    .swiper-slide {
+
+      .image {
+        max-height: rem(500px);
+        text-align: center;
+
+        img {
+          max-width: 100%;
+        }
+
+        .fullscreen {
+          background-color: rgba($color: #000000, $alpha: 0.5);
+          background-image: url(../images/fullscreen.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: rem(16px 12px);
+          border: none;
+          border-radius: 50%;
+          cursor: pointer;
+          height: rem(40px);
+          left: 0;
+          margin: 0 auto;
+          position: absolute;
+          opacity: 0.8;
+          right: 0;
+          top: rem(24px);
+          transition: opacity .25s ease-in-out;
+          width: rem(40px);
+
+          &:hover {
+            opacity: 1;
+            transition: opacity .25s ease-in-out;
+          }
+        }
+      }
+
+      .title {
+        color: #878C91;
+        height: rem(25px);
+        font-size: rem(14px);
+        margin: rem(16px 0 0 0);
+        text-align: center;
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-size: rem(12px 13px);
+      border-radius: 50%;
+      height: rem(56px);
+      margin: 0;
+      top: calc(50% - 3rem);
+      width: rem(56px);
+
+      &:hover {
+        background-color: $green;
+      }
+    }
+
+    .swiper-button-next {
+      background-image: url(../images/next-slide-gray.svg);
+      right: 0;
+
+      &:hover {
+        background-image: url(../images/next-slide-white.svg);
+      }
+    }
+
+    .swiper-button-prev {
+      background-image: url(../images/prev-slide-gray.svg);
+      left: 0;
+
+      &:hover {
+        background-image: url(../images/prev-slide-white.svg);
+      }
+    }
+
+    .swiper-pagination {
+      bottom: 65px;
+      position: absolute;
+
+      &-bullet {
+        background: #888888;
+        border: none;
+        height: rem(8x);
+        margin-right: rem(8px);
+        opacity: .5;
+        width: rem(8px);
+
+        &-active {
+          background: #00B84C;
+          opacity: 1;
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

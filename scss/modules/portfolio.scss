@@ -1,0 +1,212 @@
+.portfolio {
+
+  .swiper-container {
+    margin-top: rem(56px);
+
+    .swiper-slide {
+      .image {
+        margin: rem(0 15px);
+        position: relative;
+
+        img {
+          max-width: 100%;
+        }
+
+        &::after {
+          border-radius: 4px;
+          color: $default;
+          height: rem(32px);
+          font-size: rem(12px);
+          left: rem(16px);
+          line-height: rem(32px);
+          position: absolute;
+          text-align: center;
+          text-transform: uppercase;
+          top: rem(16px);
+          width: rem(70px);
+        }
+
+        &.before::after {
+          background: linear-gradient(90deg, #5F666C 0%, #374047 100%);
+          content: "До";
+        }
+
+        &.after::after {
+          background: linear-gradient(90deg, #59A1D4 0%, #00B84C 100%);
+          content: "После";
+        }
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-size: rem(12px 13px);
+      border-radius: 50%;
+      height: rem(56px);
+      margin: 0;
+      top: calc(50% - 3rem);
+      width: rem(56px);
+
+      &:hover {
+        background-color: $green;
+      }
+    }
+
+    .swiper-button-next {
+      background-image: url(../images/next-slide-gray.svg);
+      right: 0;
+
+      &:hover {
+        background-image: url(../images/next-slide-white.svg);
+      }
+    }
+
+    .swiper-button-prev {
+      background-image: url(../images/prev-slide-gray.svg);
+      left: 0;
+
+      &:hover {
+        background-image: url(../images/prev-slide-white.svg);
+      }
+    }
+
+    .swiper-pagination {
+      bottom: 0;
+      margin-top: rem(40px);
+      position: relative;
+
+      &-bullet {
+        background: $default;
+        border: 2px solid $primaryLight;
+        opacity: 1;
+        height: rem(12px);
+        width: rem(12px);
+
+        &-active {
+          background: $primaryLight;
+          height: rem(16px);
+          width: rem(16px);
+        }
+      }
+    }
+  }
+
+  .content {
+    margin-top: rem(40px);
+  }
+
+  .portfolio__item {
+    border-bottom: 1px solid #EBEDEE;
+    margin-bottom: rem(40px);
+    padding-bottom: rem(25px);
+
+    .images {
+
+      .image {
+        margin-bottom: rem(32px);
+        position: relative;
+
+        img {
+          width: 100%;
+        }
+
+        &::after {
+          border-radius: 4px;
+          color: $default;
+          height: rem(32px);
+          font-size: rem(12px);
+          left: rem(16px);
+          line-height: rem(32px);
+          position: absolute;
+          text-align: center;
+          text-transform: uppercase;
+          top: rem(16px);
+          width: rem(70px);
+        }
+
+        &.before::after {
+          background: linear-gradient(90deg, #5F666C 0%, #374047 100%);
+          content: "До";
+        }
+
+        &.after::after {
+          background: linear-gradient(90deg, #59A1D4 0%, #00B84C 100%);
+          content: "После";
+        }
+      }
+    }
+
+    .description {
+      color: #5F666C;
+      margin: 0;
+    }
+
+    .feedback {
+      background-color: #F7F8F9;
+      background-image: url(../images/quote.svg);
+      background-position: rem(35px 37px);
+      background-repeat: no-repeat;
+      background-size: rem(26px 20px);
+      border-radius: rem(4px);
+      margin-top: rem(32px);
+      padding: rem(32px 40px 56px 96px);
+
+      .name {
+        color: #374047;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .text {
+        color: #5F666C;
+        margin: 0;
+        margin-top: rem(16px);
+      }
+
+      .url {
+        align-items: center;
+        border: none;
+        color: #5F666C;
+        display: flex;
+        font-size: rem(14px);
+        font-weight: 700;
+        margin-top: rem(25px);
+        position: relative;
+        transition: color .25s ease-in-out;
+
+        &::before {
+          background-position: left center;
+          background-repeat: no-repeat;
+          background-size: rem(24px);
+          content: "";
+          display: inline-block;
+          height: rem(24px);
+          margin-right: rem(16px);
+          width: rem(24px);
+        }
+
+        &.flamp {
+
+          &::before {
+            background-image: url(../images/feedback-flamp.svg);
+          }
+        }
+
+        &.vk {
+          &::before {
+            background-image: url(../images/feedback-vk.svg);
+          }
+        }
+
+        &:hover {
+          color: #00B84C;
+          transition: color .25s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &-frontpage {
+    background: #F4F9FC;
+  }
+}
