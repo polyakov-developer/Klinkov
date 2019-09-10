@@ -20,57 +20,31 @@
 
 <body>
   <header id="header" class="header">
-    <div class="mobile-bar">
-      <div class="top">
-        <div id="burger" class="burger" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <a href="tel:8(922)632-17-02" class="phone"></a>
-        <button class="request button popup-trigger" data-target="#requestModal" onclick="openModal(event)">Заявка на
-          химчистку</button>
+    <nav id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu-wrapper">
+        <ul>
+          <li><a href="#price">Цены</a></li>
+          <li><a href="#portfolio">Наши работы</a></li>
+          <li><a href="#promotions">Акции</a></li>
+          <li><a href="#articles">Полезно знать</a></li>
+          <li><a href="#about">Компания</a></li>
+          <li><a href="#footer">Контакты</a></li>
+        </ul>
+        <hr>
+        <a href="tel:89226321702" class="phone">8 (922) <span class="big">632-17-02</span></a>
       </div>
-      <a href="/" class="logo">
-        <img src="./images/logo.svg" alt="Логотип КлинКов" />
-        <span>Профессиональная химчистка ковров в Челябинске</span>
-      </a>
-      <nav id="mobile-menu" class="mobile-menu">
-        <div class="mobile-menu-wrapper">
-          <ul>
-            <li><a href="#price">Цены</a></li>
-            <li><a href="#portfolio">Наши работы</a></li>
-            <li><a href="#promotions">Акции</a></li>
-            <li><a href="#articles">Полезно знать</a></li>
-            <li><a href="#about-us">Компания</a></li>
-            <li><a href="#contacts">Контакты</a></li>
-          </ul>
-          <hr>
-          <a href="tel:8(922)632-17-02" class="phone">8 (922) <span class="big">632-17-02</span></a>
-        </div>
-      </nav>
-    </div>
-
-    <div class="topbar">
-      <a href="/" class="logo">
-        <img src="./images/logo.svg" alt="Логотип КлинКов" />
-        <span>Профессиональная химчистка ковров в Челябинске</span>
-      </a>
-
-      <button class="request button popup-trigger" data-target="#requestModal" onclick="openModal(event)">Заявка на
-        химчистку</button>
-    </div>
+    </nav>
 
     <div class="left">
       <a href="/" class="logo">
         <img src="./images/logo.svg" alt="Логотип КлинКов" />
-        <span>Профессиональная химчистка ковров в Челябинске</span>
+        <span>Профессиональная химчистка ковров в Челябинске</span>
       </a>
     </div>
 
     <div class="middle">
       <div class="container">
-        <a href="tel:8(922)632-17-02" class="phone">8 (922) <span class="big">632-17-02</span></a>
+        <a href="tel:89226321702" class="phone">8 (922) <span class="big">632-17-02</span></a>
         <div class="divider"></div>
         <nav class="navigation">
           <ul class="d-flex">
@@ -79,9 +53,18 @@
             <li><a href="#promotions">Акции</a></li>
             <li><a href="#articles">Полезно знать</a></li>
             <li><a href="#about-us">Компания</a></li>
-            <li><a href="#contacts">Контакты</a></li>
+            <li><a href="#footer">Контакты</a></li>
           </ul>
         </nav>
+        <div id="burger" class="burger" onclick="toggleMenu()">
+          <div class="lines-wrapper">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span>Меню</span>
+        </div>
+        <a href="tel:89226321702" class="phone--mobile"></a>
       </div>
     </div>
 
@@ -100,11 +83,11 @@
           <h1>Профессиональная химчистка ковров в Челябинске</h1>
           <p class="sub-heading">Вернём вашему ковру первозданный вид — избавим от запахов, пятен и пыли. Сами заберём
             его и доставим абсолютно бесплатно.</p>
-          <form action="/php/feedback.php" id="form-request-banner" class="form-ajax d-flex flex-column flex-sm-row"
-            method="POST" onsubmit="submitForm(event)">
+          <form action="/netcat/add.php" id="form-request-banner" class="form-ajax d-flex flex-column flex-sm-row"
+            method="POST" enctype="multipart/form-data" onsubmit="submitForm(event)">
             <div class="field">
               <label for="cons-phone">Номер телефона</label>
-              <input type="tel" name="f_Telephone" id="cons-phone" required>
+              <input type="tel" name="f_Telephone" id="cons-phone" data-required="true">
               <span class="valid--feedback">Необходимо ввести Ваш номер телефона</span>
             </div>
             <input type="submit" class="button" value="Заказать консультацию">
@@ -123,7 +106,7 @@
     </section>
 
     <!-- About-us -->
-    <section id="about-us" class="section about-us pb-0">
+    <section id="about-us" class="section about-us about-us-frontpage pb-0">
       <div class="container">
         <!-- Text -->
         <div class="d-flex flex-wrap flex-lg-nowrap align-items-center">
@@ -145,7 +128,7 @@
     </section>
 
     <!-- Advantages -->
-    <section id="advantages" class="section advantages pt-0">
+    <section id="advantages" class="section advantages advantages-frontpage pt-0">
       <div class="container">
         <div class="row">
           <div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex align-items-center">
@@ -183,7 +166,7 @@
     </section>
 
     <!-- Stages of work -->
-    <section id="stages-of-work" class="section stages-of-work">
+    <section id="stages-of-work" class="section stages-of-work stages-of-work-frontpage">
       <div class="container">
         <p class="section-heading h2 text-center">Этапы работы</p>
         <div class="row d-none d-md-flex">
@@ -377,7 +360,7 @@
     </section>
 
     <!-- Price & Calculator -->
-    <section id="price" class="section price">
+    <section id="price" class="section price price-frontpage">
       <div class="container">
         <div class="row no-gutters">
           <!-- Price list -->
@@ -503,7 +486,7 @@
           </div>
           <!-- Calculator -->
           <div class="col-12 col-xl-4">
-            <div id="calculator" class="calculator">
+            <div id="calculator" class="calculator calculator-frontpage">
               <h4>Калькулятор</h4>
               <div class="fields-list">
                 <!-- Shape -->
@@ -536,18 +519,19 @@
                 <div class="field-set field-set--row">
                   <div class="field">
                     <label for="length" class="caption">Длина, м</label>
-                    <input type="number" name="f_Length" id="length" class="value" min="0" max="99">
+                    <input type="number" name="f_Length" id="length" class="value" min="0" max="99" disabled />
                   </div>
+
                   <div class="field">
                     <label for="width" class="caption">Ширина, м</label>
-                    <input type="number" name="f_Width" id="width" class="value" min="0" max="99">
+                    <input type="number" name="f_Width" id="width" class="value" min="0" max="99" disabled />
                   </div>
                 </div>
 
                 <!-- Diameter -->
                 <div class="field">
                   <label for="diameter" class="caption">Диаметр, м (для круглых ковров)</label>
-                  <input type="number" name="f_Diameter" id="diameter" class="value" min="0" max="99">
+                  <input type="number" name="f_Diameter" id="diameter" class="value" min="0" max="99" disabled />
                 </div>
 
                 <!-- Long nap -->
@@ -563,25 +547,25 @@
                 <div class="field-set field-set--column">
                   <label class="caption">Материал ковра</label>
                   <div class="field">
-                    <input type="radio" name="f_CarpetMaterial[]" id="material-1" value="1">
+                    <input type="radio" name="f_CarpetMaterial[]" id="material-1" value="1" />
                     <label for="material-1" class="value">
                       <span>Синтетика, полушерсть, шерсть</span>
                     </label>
                   </div>
                   <div class="field">
-                    <input type="radio" name="f_CarpetMaterial[]" id="material-2" value="2">
+                    <input type="radio" name="f_CarpetMaterial[]" id="material-2" value="2" />
                     <label for="material-2" class="value">
                       <span>Вискоза, сизаль, хлопок, шёлк (фабричные ковры)</span>
                     </label>
                   </div>
                   <div class="field">
-                    <input type="radio" name="f_CarpetMaterial[]" id="material-3" value="3">
+                    <input type="radio" name="f_CarpetMaterial[]" id="material-3" value="3" />
                     <label for="material-3" class="value">
                       <span>Шерсть, шерсть+шёлк (ковры ручной работы)</span>
                     </label>
                   </div>
                   <div class="field">
-                    <input type="radio" name="f_CarpetMaterial[]" id="material-4" value="4">
+                    <input type="radio" name="f_CarpetMaterial[]" id="material-4" value="4" />
                     <label for="material-4" class="value">
                       <span>Шёлк (ковры ручной работы)</span>
                     </label>
@@ -592,31 +576,31 @@
                 <div class="field-set field-set--column">
                   <label class="caption">Скидки</label>
                   <div class="field">
-                    <input type="radio" name="f_Sale[]" id="sale-1" value="1">
+                    <input type="checkbox" name="f_Sale[]" id="sale-1" value="1" onchange="changeDiscount(event)">
                     <label for="sale-1" class="value">
                       <span>-10% пенсионерам, ветеранам, многодетным семьям</span>
                     </label>
                   </div>
                   <div class="field">
-                    <input type="radio" name="f_Sale[]" id="sale-2" value="2">
+                    <input type="checkbox" name="f_Sale[]" id="sale-2" value="2" onchange="changeDiscount(event)">
                     <label for="sale-2" class="value">
                       <span>-10% при повторном обращении</span>
                     </label>
                   </div>
                   <div class="field">
-                    <input type="radio" name="f_Sale[]" id="sale-3" value="3">
+                    <input type="checkbox" name="f_Sale[]" id="sale-3" value="3" onchange="changeDiscount(event)">
                     <label for="sale-3" class="value">
                       <span>-15% именнинику (3 дня до и 3 после Дня рождения)</span>
                     </label>
                   </div>
                   <div class="field">
-                    <input type="radio" name="f_Sale[]" id="sale-4" value="4">
+                    <input type="checkbox" name="f_Sale[]" id="sale-4" value="4" onchange="changeDiscount(event)">
                     <label for="sale-4" class="value">
                       <span>-20% скидка для всех (июль – август)</span>
                     </label>
                   </div>
                   <div class="field">
-                    <input type="checkbox" name="f_isBandMember" id="sale-5" value="5">
+                    <input type="checkbox" name="f_Sale[]" id="sale-5" value="5" onchange="changeDiscount(event)">
                     <label for="sale-5" class="value">
                       <span>-5% для участников нашей группы (ВК, ОК, Инстаграмм)</span>
                     </label>
@@ -649,7 +633,7 @@
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="section portfolio">
+    <section id="portfolio" class="section portfolio portfolio-frontpage">
       <div class="container">
         <p class="section-heading h2 text-center">Примеры работ</p>
         <p class="sub-heading text-center">Посмотрите как выглядели ковры клиентов до и после нашей стирки</p>
@@ -708,7 +692,7 @@
     </section>
 
     <!-- Reviews -->
-    <section class="section reviews">
+    <section class="section reviews reviews-frontpage">
       <div class="container">
         <p class="section-heading h2 text-center">Отзывы</p>
         <p class="sub-heading text-center">Наши клиенты о нас и нашей работе</p>
@@ -753,7 +737,7 @@
     </section>
 
     <!-- Promotions -->
-    <section id="promotions" class="section promotions">
+    <section id="promotions" class="section promotions promotions-frontpage">
       <div class="container">
         <p class="section-heading h2">Акции и скидки</p>
         <div class="promotions-list">
@@ -804,7 +788,7 @@
     </section>
 
     <!-- Articles -->
-    <section id="articles" class="section articles">
+    <section id="articles" class="section articles articles-frontpage">
       <div class="container">
         <p class="section-heading h2">Полезно знать</p>
         <div class="articles-list">
@@ -839,7 +823,7 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer id="footer" class="footer">
     <div class="container">
       <div class="row no-gutters">
         <div class="col-12 col-lg-auto text-sm-center text-lg-left">
@@ -980,42 +964,25 @@
   <script src="./libs/jquery-3.4.1.min.js"></script>
 
   <!-- Bootstrap -->
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./libs/bootstrap/bootstrap.min.js"></script>
 
   <!-- Swiper -->
-  <link rel="stylesheet" href="./node_modules/swiper/dist/css/swiper.min.css">
-  <script src="./node_modules/swiper/dist/js/swiper.min.js"></script>
+  <link rel="stylesheet" href="./libs/swiper/swiper.min.css">
+  <script src="./libs/swiper/swiper.min.js"></script>
+
+  <!-- MagnificPopup -->
+  <link rel="stylesheet" href="./libs/magnific-popup/magnific-popup.css">
+  <script src="./libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- LightGallery -->
+  <link rel="stylesheet" href="./libs/lightgallery/lightgallery.min.css">
+  <script src="./libs/lightgallery/lightgallery.min.js"></script>
 
   <!-- Inputmask -->
   <script src="./libs/input-mask/inputmask.js"></script>
 
   <!-- ScrollLock -->
   <script src="./libs/scroll-lock/scroll-lock.min.js"></script>
-
-  <script>
-    const swiperPortfolio = new Swiper('#portfolio .swiper-container', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination-portfolio',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-    const swiperStagesOfWork = new Swiper("#stages-of-work .swiper-container", {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination-stages-of-work',
-        clickable: true,
-      },
-    });
-  </script>
 
   <script src="./scripts/calculator.js"></script>
   <script src="./scripts/submitForm.js"></script>
